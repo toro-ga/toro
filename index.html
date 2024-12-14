@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <header>
+        <h1>Mindful Tasks</h1>
+        <p>Organize and visualize your tasks beautifully</p>
+    </header>
+    <main>
+        <div id="todo-container">
+            <h2>Add a Task</h2>
+            <div class="input-container">
+                <input type="text" id="new-task-input" placeholder="Enter a new task">
+                <button id="add-task-button" class="button primary-button">Add</button>
+            </div>
+            <ul id="task-list"></ul>
+        </div>
+        <div id="controls">
+            <button id="export-button" class="button">Export</button>
+            <input type="file" id="import-input" accept=".json" hidden>
+            <button id="import-button" class="button">Import</button>
+        </div>
+        <div id="mind-map">
+            <h2>Mind Map</h2>
+            <svg id="connections" width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none;"></svg>
+        </div>
+    </main>
+    <footer>
+        <p>Created with ♥ for seamless task management</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f7fc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure full height */
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+    width: 90%;
+    max-width: 800px;
+    flex: 1; /* Allow main content to expand */
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* To-Do Container */
+#todo-container {
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#todo-container h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #6a11cb;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#new-task-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s;
+}
+
+#new-task-input:focus {
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+    outline: none;
+}
+
+.button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.primary-button {
+    background: #6a11cb;
+    color: white;
+    transition: background 0.3s;
+}
+
+.primary-button:hover {
+    background: #4e0ba7;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f8ff;
+    border: 1px solid #d0e7ff;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, background 0.3s;
+}
+
+.task:hover {
+    transform: scale(1.02);
+    background: #e8f4ff;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background 0.3s;
+}
+
+.icon-button.done {
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.icon-button.delete {
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.icon-button:hover {
+    transform: scale(1.1);
+    background: #f9f9f9;
+}
+
+/* Mind Map */
+#mind-map {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background: white;
+    border: 2px solid #6a11cb;
+    border-radius: 15px;
+    padding: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#mind-map h2 {
+    margin: 0 0 15px 0;
+    color: #6a11cb;
+    text-align: center;
+}
+
+.task-node {
+    position: absolute;
+    padding: 10px; /* Equal padding on all sides */
+    background: #90caf9;
+    color: #000;
+    border-radius: 15px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    border: 1px solid #d0e7ff;
+    transition: transform 0.3s, background 0.3s;
+    text-align: center; /* Ensure text alignment */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.task-node:hover {
+    background: #a9d5ff;
+}
+
+.task-node.grayed-out {
+    background: #e0e0e0;
+    color: #757575;
+}
+
+svg line {
+    stroke-width: 2px;
+    transition: stroke 0.3s;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #mind-map {
+        height: 400px;
+    }
+
+    .icon-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .task {
+        padding: 10px;
+    }
+
+    .task-node {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
